@@ -2,9 +2,9 @@ package org.example.records;
 
 import java.util.List;
 
-public record Fragment(List<String> sentences) {
+public record Paragraph(List<String> sentences) {
 
-  public Fragment {
+  public Paragraph {
     if (sentences == null) {
       throw new IllegalArgumentException("sentences must not be null");
     }
