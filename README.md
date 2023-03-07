@@ -17,7 +17,7 @@ What is the key difference between a record and a class? What are the ways to va
 instances? How to apply a builder design pattern? Why records are useful when writing functional
 code? How records will work with pattern matching?
 
-# Touch points
+# Talk structure
 
 - What is a record: definition, rationale and history
 - Let's compare to a class ([Point.java](src/main/java/org/example/records/Point.java) vs
@@ -49,7 +49,10 @@ code? How records will work with pattern matching?
       processor ([Transaction.java](src/main/java/org/example/records/Transaction.java))
         - https://github.com/Randgalt/record-builder
 - Tools support
-    - Records != JavaBeans: different reflection API
+    - Records != JavaBeans:
+        - fields may not be recognised by default
+        - don't work as class proxies, cannot be ORM or JAX-RS entities
+        - different reflection API
     - Records are final: impossible to mock using standard technique
     - IDE suggests to convert a class to a record
 - Why records are important?
