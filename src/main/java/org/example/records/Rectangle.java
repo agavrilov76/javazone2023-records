@@ -6,7 +6,7 @@ public record Rectangle(double length, double width) {
     this.width = width;
   }
 
-  public double arial() {
+  public double area() {
     return length * width;
   }
 }

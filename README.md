@@ -4,14 +4,14 @@
 
 # Abstract
 
-Java Records is the one of the most prominent language feature introduced of the modern time.
+Java Records is one of the most prominent language feature introduced of the recent time.
 It is not only an elegant way to declare an immutable value object type but also a tool to improve
 overall code quality. Using records reduces the amount of boilerplate code, eliminates the
-need for third-party dependencies and enables new language features and programming
-techniques.
+need for third-party code generators such as Lombok, and enables new language features and
+programming techniques.
 
-In this talk I want to share my positive experience of migration our codebase to used records
-based on examples.
+In this talk I want to share my experience of migration our codebase to use records by looking at
+simple code examples.
 
 What is the key difference between a record and a class? What are the ways to validate record
 instances? How to apply a builder design pattern? Why records are useful when writing functional
@@ -28,11 +28,12 @@ code? How records will work with pattern matching?
       and [Address.java](src/main/java/org/example/records/Address.java))
         - Validation
         - Setting default values
-    - Force immutability on collection record
+    - Forcing immutability on collection record
       components ([Paragraph.java](src/main/java/org/example/records/Paragraph.java))
 - Record polymorphism with
   interfaces ([Request.java](src/main/java/org/example/records/Request.java))
-    - Using interface default methods ([Config.java](src/main/java/org/example/records/Config.java))
+    - Using interface default
+      methods ([BaseConfig.java](src/main/java/org/example/records/BaseConfig.java))
     - Annotations and documentation
       inheritance ([RequestApi.java](src/main/java/org/example/records/RequestApi.java))
 - Use case examples
@@ -50,20 +51,20 @@ code? How records will work with pattern matching?
         - https://github.com/Randgalt/record-builder
 - Tools support
     - Records != JavaBeans:
-        - fields may not be recognised by default
+        - fields may not be recognized by default
         - don't work as class proxies, cannot be ORM or JAX-RS entities
         - different reflection API
     - Records are final: impossible to mock using standard technique
     - IDE suggests to convert a class to a record
 - Why records are important?
-    - Better code using standard java language
+    - Better code using standard language features
         - No need to learn third-party libraries, track dependency updates
     - Performance
         - Java platform knows beforehand that records are immutable data carriers
         - Future improvements such as value objects: https://openjdk.org/jeps/8277163
     - Record pattern matching (Preview)
         - https://openjdk.org/jeps/432
-    - The future: 'wither', serialisation 2.0 and possibly even abstract records
+    - The future: 'wither', serialization 2.0 and possibly even abstract records
         - `Point pp = p with { x = 3; }` https://github.com/openjdk/amber-docs/blob/master/eg-drafts/reconstruction-records-and-classes.md
         - Towards better
           serialisation: https://openjdk.org/projects/amber/design-notes/towards-better-serialization
